@@ -1,10 +1,18 @@
+type User = {
+    name: string
+    age: number
+    gender: 'male' | 'female'
+}
+
+type Employee = User & {company: string}
+
 /*
 Типизируйте функцию getPersons, возвращающую массив объектов со следующими свойствами:
 - name - строка
 - age - число
 - gender - 'male' или 'female'
  */
-export function getPersons();
+export function getPersons(): Array<User>;
 
 /*
 Типизируйте функцию personToString, возвращающую строку и принимающую объект одного из следующих форматов:
@@ -18,4 +26,4 @@ export function getPersons();
    - gender - 'male' или 'female'
    - company- строка
  */
-export function personToString(person);
+export function personToString(person: User | Employee): string;
